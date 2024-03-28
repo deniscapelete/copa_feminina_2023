@@ -7,3 +7,9 @@
   justify-content: center;
   margin: auto
 }
+
+h1,
+h2 {
+  text-align: center;
+  margin-block: 1rem;
+}

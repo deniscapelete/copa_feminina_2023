@@ -1,5 +1,6 @@
 import './App.css'
 import Card from './components/Card'
+import GameTable from './components/GameTable'
 
 function App() {
 
@@ -8,6 +9,12 @@ function App() {
       <h1>Copa do mundo Feminina 2023</h1>
       <section className='cards'>
         <Card />
+      </section>
+
+      <h2>Tabela de Jogos</h2>
+
+      <section className='game_table'>
+        <GameTable />
       </section>
 
     </>
