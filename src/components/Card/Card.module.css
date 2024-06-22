@@ -8,7 +8,6 @@
 .card .linha {
     width: 100%;
     height: 10px;
-    background-color: blue;
 }
 
 .card h2 {
@@ -26,4 +25,5 @@
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    line-height: 50px;
 }
