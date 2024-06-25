@@ -4,12 +4,31 @@ import Fixture from './components/Fixture'
 import GameTable from './components/GameTable'
 import GroupStandings from './components/GroupStandings'
 import KnockoutStage from './components/KnockoutStage'
+import TournamentBracket from './components/TournamentBracket'
 
 function App() {
 
   return (
     <>
       <h1>Copa do Mundo Feminina 2023</h1>
+
+      <section className='knockout_table'>
+
+        <h2>Finais</h2>
+        <TournamentBracket fase='finais' />
+
+        <h2>Semifinais</h2>
+        <TournamentBracket fase='semifinais' />
+
+        <h2>Quartas de finais</h2>
+        <TournamentBracket fase='quartas' />
+
+        <h2>Oitavas de finais</h2>
+        <TournamentBracket fase='oitavas' />
+
+      </section>
+
+
       {/* <section className='card'>
         <Card />
       </section>
@@ -28,10 +47,10 @@ function App() {
 
       <section className='knockout_table'>
         <KnockoutStage fase="oitavas" />
-      </section> */}
+      </section>
 
       <h2>Jogos do dia 10/08/2023</h2>
-      <section className='fixture_table'>
+      <section className='knockout_table'>
         <Fixture fase='quartas' data='10/08' />
       </section>
 
@@ -48,7 +67,7 @@ function App() {
       <h2>Finais</h2>
       <section className='knockout_table'>
         <KnockoutStage fase="finais" />
-      </section>
+      </section> */}
 
     </>
   )
