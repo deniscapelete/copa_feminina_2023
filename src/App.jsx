@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import './App.css'
-// import Card from './components/Card'
+import Card from './components/Card'
 // import Fixture from './components/Fixture'
 // import GameTable from './components/GameTable'
 // import GroupStandings from './components/GroupStandings'
 // import KnockoutStage from './components/KnockoutStage'
 import TournamentBracket from './components/TournamentBracket'
+import TabButton from './components/TabButton'
 
 function App() {
 
-  const [activeTab, setActiveTab] = useState('Tab 1')
+  const [activeTab, setActiveTab] = useState('Finais')
 
   function handleChangeTab(tabName) {
     setActiveTab(tabName)
@@ -18,14 +19,22 @@ function App() {
   function renderTabcontent() {
     switch (activeTab) {
 
-      case 'Tab 1':
-        return <TournamentBracket fase='oitavas' />
+      case 'Finais':
+        return <TournamentBracket fase='finais' />
 
-      case 'Tab 2':
+      case 'Semifinais':
+        return <TournamentBracket fase='semifinais' />
+
+      case 'Quartas':
         return <TournamentBracket fase='quartas' />
 
-      case 'Tab 3':
-        return <TournamentBracket fase='semifinais' />
+      case 'Oitavas':
+        return <TournamentBracket fase='oitavas' />
+
+      case 'Grupos':
+        return <section className='card'>
+          <Card />
+        </section>
 
     }
   }
@@ -39,13 +48,23 @@ function App() {
 
         <div className='tabs'>
 
-          <button
-            className={activeTab === 'Tab 1' ? 'active' : ''}
-            onClick={() => handleChangeTab('Tab 1')}
-          >
-            Oitavas
-          </button>
 
+          <TabButton tabName='Finais' activeTab={activeTab} handleChangeTab={handleChangeTab} />
+
+          <TabButton tabName='Semifinais' activeTab={activeTab} handleChangeTab={handleChangeTab} />
+
+          <TabButton tabName='Quartas' activeTab={activeTab} handleChangeTab={handleChangeTab} />
+
+          <TabButton tabName='Oitavas' activeTab={activeTab} handleChangeTab={handleChangeTab} />
+
+          <TabButton tabName='Grupos' activeTab={activeTab} handleChangeTab={handleChangeTab} />
+
+
+
+
+
+
+          {/* 
           <button
             className={activeTab === 'Tab 2' ? 'active' : ''}
             onClick={() => handleChangeTab('Tab 2')}
@@ -58,7 +77,7 @@ function App() {
             onClick={() => handleChangeTab('Tab 3')}
           >
             Semifinais
-          </button>
+          </button> */}
 
         </div>
 

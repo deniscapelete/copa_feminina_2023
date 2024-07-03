@@ -22,7 +22,7 @@ function TournamentBracket({ fase }) {
     return (
         <section className={styles.jogos}>
             {jogos.map((jogo) => (
-                <div key={jogo.jogo} className={styles.jogo}>
+                <div key={jogo.id} className={styles.jogo}>
                     <HeaderComponent fase={jogo} jogo={jogo} />
                     <DateTimeComponent jogo={jogo} />
                     <ScoreComponent jogo={jogo} />
